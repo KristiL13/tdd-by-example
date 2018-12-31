@@ -17,4 +17,9 @@ public class Dollar {
         // then the object was mutable and this can often be a source of errors
         return new Dollar(amount * multiplier);
     }
+
+    public boolean equals(Object object) {
+        Dollar dollar = (Dollar) object;
+        return amount == dollar.amount;
+    }
 }
