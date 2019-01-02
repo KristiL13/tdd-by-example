@@ -2,8 +2,8 @@ package guru.springframework;
 
 public class Dollar extends Money {
 
-    public Dollar(int amount) {
-        this.amount = amount;
+    public Dollar(int amount, String currency) {
+        super(amount, currency);
     }
 
     public Money times(int multiplier) { // now multiplication original amount doesn't change,
@@ -13,7 +13,7 @@ public class Dollar extends Money {
         //  amount *= multiplier;
         // }
         // then the object was mutable and this can often be a source of errors
-        return new Dollar(amount * multiplier);
+        return Money.dollar(amount * multiplier);
     }
 
 }
