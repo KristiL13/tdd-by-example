@@ -6,7 +6,7 @@ public class Dollar extends Money {
         this.amount = amount;
     }
 
-    Dollar times(int multiplier) { // now multiplication original amount doesn't change,
+    public Money times(int multiplier) { // now multiplication original amount doesn't change,
         // we return a new object of the calculation done on the original object
         // when it was:
         // void times (int multiplier) {
