@@ -24,7 +24,7 @@ public class Money implements Expression {
 
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return amount == money.amount && this.currency == money.currency;
+        return amount == money.amount && this.currency.equals(money.currency);
     }
 
     @Override
@@ -40,10 +40,12 @@ public class Money implements Expression {
                 '}';
     }
 
+    @Override
     public Expression times(int multiplier) {
         return new Money(amount * multiplier, this.currency);
     }
 
+    @Override
     public Expression plus(Expression addend) {
         return new Sum(this, addend);
     }
