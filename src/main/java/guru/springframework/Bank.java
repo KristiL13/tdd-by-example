@@ -19,6 +19,5 @@ public class Bank {
 
     public void addRate(String from, String to, int rate) {
         rateMap.put(new Pair(from, to), rate);
-
     }
 }
